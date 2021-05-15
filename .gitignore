@@ -1,3 +1,4 @@
 node_modules
 echosystem.config.js
 package-lock.json
+.env
