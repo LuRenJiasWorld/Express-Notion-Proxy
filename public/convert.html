@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <title>链接转换</title>
+        <style>
+            body {
+                text-align: center;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <label>Notion链接：</label>
+        <input id="link" placeholder="输入Notion Page链接" />
+        <p id="result">代理后的链接为</p>
+        <a target="_blank" id="url"></a>
+    </body>
+    <script>
+        var link = document.getElementById('link');
+        var result = document.getElementById('result');
+        var url = document.getElementById('url');
+
+        link.addEventListener('input', () => {
+            var value = link.value;
+            var baseUrl = location.href.split('/').splice(0, 3).join('/');
+            url.href = value.replace('https://www.notion.so', baseUrl);
+            url.innerText = url.href;
+        });
+    </script>
+</html>
