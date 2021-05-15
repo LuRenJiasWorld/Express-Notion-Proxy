@@ -4,18 +4,21 @@ const compression = require("compression");
 
 const fs = require("fs");
 const path = require("path");
+const dotenv = require("dotenv");
 
 const {
   createProxyMiddleware,
   responseInterceptor,
 } = require("http-proxy-middleware");
 
+dotenv.config();
+
 const app = express();
 
 const environment = process.env.ENVIRONMENT || "production";
-const listenPort = process.env.PORT || 8080;
-const productionBaseURL =
-  process.env.PRODUCTION_BASE_URL || "https://proxy.lurenjia.in";
+
+const productionListenPort = process.env.PRODUCTION_PORT || 8080;
+const productionBaseURL = process.env.PRODUCTION_BASE_URL;
 
 const domainName =
   environment === "development" ? "https://localhost" : productionBaseURL;
@@ -102,7 +105,7 @@ if (environment === "development") {
 
   server.listen(443);
 } else {
-  app.listen(listenPort);
+  app.listen(productionListenPort);
 }
 
 module.exports = app;

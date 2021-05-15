@@ -1,19 +1,16 @@
 {
-  "name": "express-starter",
+  "name": "express-notion-proxy",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start:local": "cross-env ENVIRONMENT=development npm run start",
-    "start:server": "cross-env ENVIRONMENT=production PORT=3000 PRODUCTION_BASE_URL=http://proxy.live2.fun:3000 npm run start",
-    "start:cloud": "cross-env ENVIRONMENT=production npm run start",
-    "start": "node ./index.js",
-    "deploy": "rsync -avz --progress --delete -e ssh ./ lurenjiasworld@hk01-router.qcloud.lurenjia.in:/home/lurenjiasworld/htdocs/notion-proxy"
+    "start": "node ./index.js"
   },
-  "author": "yugasun",
+  "author": "Benjamin Chris<loli@lurenjia.in>",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "http-proxy-middleware": "^2.0.0"
   },
