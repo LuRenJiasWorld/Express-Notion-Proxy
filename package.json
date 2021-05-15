@@ -1,7 +1,7 @@
 {
   "name": "express-notion-proxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "简单Notion代理，使用Express开发",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js"
