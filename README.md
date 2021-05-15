@@ -2,18 +2,28 @@
 
 > 简单Notion代理，使用Express开发
 
-## 1. 原理
+## 原理
 - 使用http-proxy-middleware将所有请求代理到 https://www.notion.so/
 - 将返回的JS里包含Notion相关域名的字符串修改为用户配置的域名
 - 修改对应发送和返回的请求头以保证连接成功
 
-## 2. 使用方法
+## 使用方法
 - 按照.env文件中的说明修改配置文件
 - 运行 `npm install`
 - 运行 `npm run start`
 - 在浏览器中打开你配置的地址
 
-## 3. 现存限制
+## 小工具
+
+### /ping
+
+访问域名根目录下的`/ping`，如果返回`pong`，说明Express服务器启动成功
+
+### /convert
+
+一个简单的HTML网页，可以把Notion分享出来的地址转换为代理的地址
+
+## 现存限制
 
 > 部分限制可能会在未来版本被解决
 
@@ -21,12 +31,12 @@
 - 无法代理Page中的Embed Links（如YouTube视频）
 - 无法代理Page中的视频（走AWS）
 
-## 4. TODO
+## TODO
 
 - [ ] 拦截XHR，实现所有网络请求的代理
 - [ ] 补全注释
 
-## 5. 开源协议
+## 开源协议
 
 MIT License
 
